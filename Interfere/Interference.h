@@ -1,11 +1,13 @@
 #pragma once
 
-#include <BML/BMLAll.h>
+#include <BMLPlus/BMLAll.h>
 #include <map>
 
 #define BALL_WOOD 1
 #define BALL_PAPER 2
 #define BALL_STONE 3
+
+typedef const char* C_CKSTRING;
 
 extern "C" {
 	__declspec(dllexport) IMod* BMLEntry(IBML* bml);
@@ -15,11 +17,11 @@ class Interference : public IMod {
 public:
 	Interference(IBML* bml) : IMod(bml) {}
 
-	virtual CKSTRING GetID() override { return "Interference"; }
-	virtual CKSTRING GetVersion() override { return BML_VERSION; }
-	virtual CKSTRING GetName() override { return "Interference"; }
-	virtual CKSTRING GetAuthor() override { return "Ghomist"; }
-	virtual CKSTRING GetDescription() override { return "Just another mod to drive you crazy..."; }
+	virtual C_CKSTRING GetID() override { return "Interference"; }
+	virtual C_CKSTRING GetVersion() override { return BML_VERSION; }
+	virtual C_CKSTRING GetName() override { return "Interference"; }
+	virtual C_CKSTRING GetAuthor() override { return "Ghomist"; }
+	virtual C_CKSTRING GetDescription() override { return "Just another mod to drive you crazy..."; }
 	DECLARE_BML_VERSION;
 	virtual void OnLoad();
 	virtual void OnProcess();
